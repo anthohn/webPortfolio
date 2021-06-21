@@ -1,0 +1,114 @@
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 21.06.2021
+* Description : style du html
+**/
+
+:root {
+	--mainBackground-color: #fcf1e9;
+	--navBackground-color: #EBE3DF;
+	--boxBackground-color: #FFFFFF;
+	--twitterInBackground-color: #36B9FF;
+	--linkedInBackground-color: #0186be;
+
+
+  }
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: var(--mainBackground-color);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/**NAVBAR**/
+
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+nav {
+	margin-top: 50px;
+}
+
+ul, li {
+	border-radius: 20px;
+	background-color: var(--navBackground-color);
+}
+
+ul li, a {
+	text-align: center;
+	display: inline-block;
+	margin: 0 2px;
+	padding: 7px;
+	text-decoration: none;
+	color: black;
+	background-color: transparent;
+}
+
+#active{
+	width: 100%;
+	border-radius: 15px;
+	background-color: white;
+}
+
+/**CONTAINER**/
+
+.container{
+	margin: 50px 0 0 0;
+	width: 60%;
+	margin-left: 20%;
+}
+
+.container-flex {
+	display: flex;
+	flex-wrap: wrap;
+	/* background-color: DodgerBlue; */
+}
+
+.container-flex div {
+	background-color: var(--boxBackground-color);
+	width: 265px;
+	margin: 10px;
+	text-align: center;
+	line-height: 265px;
+	font-size: 30px;
+	border-radius: 20px;
+}
+
+.container-flex a {
+	padding: 0;
+	margin: 0;
+}
+
+
+.container-flex a div svg {
+	/* margin: 0 auto;
+	position: relative; */
+	background-color: transparent;
+}
+
+.container-flex .twitter {
+	background-color: var(--twitterInBackground-color);
+}
+
+.container-flex .aboutMe {
+	background-color: var(--boxBackground-color);
+	width: 550px;
+	margin: 10px;
+	text-align: center;
+	line-height: 265px;
+	font-size: 30px;
+	border-radius: 20px;
+}
+
+.container-flex .linkedIn {
+	background-color: var(--linkedInBackground-color);
+}
+
+
+
