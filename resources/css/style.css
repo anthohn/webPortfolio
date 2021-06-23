@@ -8,18 +8,42 @@
 :root {
 	--mainBackground-color: #fcf1e9;
 	--navBackground-color: #EBE3DF;
+	--navFont-color: #0d1117;
+	--navActiveBackground: #FFFFFF;
+
 	--boxBackground-color: #FFFFFF;
+	--boxShadow-color: none;
+
+	--text-color: #000000;
+
 	--twitterInBackground-color: #36B9FF;
 	--linkedInBackground-color: #0186be;
+}
 
+.dark-mode {
+	--mainBackground-color: #090C10;
+	--navBackground-color: #090C10;
+	--navFont-color: #FEFEFF;
+	--navActiveBackground: #21262D;
+
+	--boxBackground-color: #090C10;
+	--boxShadow-color: #30363d;
+
+	--text-color: #F0F2F8;
+
+	--twitterInBackground-color: #090C10;
+	--linkedInBackground-color: #090C10;
 
   }
+
+body{
+	background-color: var(--mainBackground-color);
+}
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	background-color: var(--mainBackground-color);
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -35,6 +59,12 @@ nav {
 	margin-top: 50px;
 }
 
+ul {
+	padding: 2px;
+	box-shadow: var(--boxShadow-color) 0px 0px 0px 2px inset;
+
+}
+
 ul, li {
 	border-radius: 20px;
 	background-color: var(--navBackground-color);
@@ -46,14 +76,13 @@ ul li, a {
 	margin: 0 2px;
 	padding: 7px;
 	text-decoration: none;
-	color: black;
-	background-color: transparent;
+	color: var(--navFont-color);
 }
 
 #active{
 	width: 100%;
 	border-radius: 15px;
-	background-color: white;
+	background-color: var(--navActiveBackground);
 }
 
 /**CONTAINER**/
@@ -67,47 +96,101 @@ ul li, a {
 .container-flex {
 	display: flex;
 	flex-wrap: wrap;
-	/* background-color: DodgerBlue; */
 }
 
 .container-flex div {
+	box-shadow: var(--boxShadow-color) 0px 0px 0px 2px inset;
 	background-color: var(--boxBackground-color);
+	color: var(--text-color);	
 	width: 265px;
+	height: 265px;
 	margin: 10px;
-	text-align: center;
-	line-height: 265px;
 	font-size: 30px;
 	border-radius: 20px;
 }
 
-.container-flex a {
-	padding: 0;
-	margin: 0;
-}
-
-
-.container-flex a div svg {
-	/* margin: 0 auto;
-	position: relative; */
-	background-color: transparent;
-}
-
 .container-flex .twitter {
+	display: flex;
 	background-color: var(--twitterInBackground-color);
 }
 
 .container-flex .aboutMe {
-	background-color: var(--boxBackground-color);
 	width: 550px;
 	margin: 10px;
-	text-align: center;
-	line-height: 265px;
 	font-size: 30px;
 	border-radius: 20px;
 }
 
 .container-flex .linkedIn {
 	background-color: var(--linkedInBackground-color);
+}
+
+
+.darkMode {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 
